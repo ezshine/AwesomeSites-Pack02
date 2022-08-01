@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Threejs性能测试</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="shortcut icon" href="/assets/images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./assets/images/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="./assets/images/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/images/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/images/favicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./assets/images/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/images/favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./assets/images/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/images/favicon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-touch-icon-180x180.png">
+    <meta property="og:description" content="Abduction 🛸 is a Lusion Monthly Experiment">
+    <meta property="og:image:alt" content="Abduction">
+    <meta property="og:image" content="https://exp-abduction.lusion.co/assets/images/cover.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Abduction">
+    <meta property="og:title" content="Abduction">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://exp-abduction.lusion.co">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@lusionltd">
+    <meta name="twitter:description" content="Abduction 🛸 is a Lusion Monthly Experiment">
+    <meta name="twitter:image:alt" content="Abduction">
+    <meta name="twitter:image" content="https://exp-abduction.lusion.co/assets/images/cover.jpg">
+    <meta name="twitter:title" content="Abduction">
+    <meta name="twitter:url" content="https://exp-abduction.lusion.co">
+</head>
+
+<body> <canvas id="app"></canvas>
+    <div id="preloader">
+        <div id="preloader-title">Threejs性能测试</div>
+        <div class="preloader-explanations">
+            <div class="preloader-explanations--container">
+                <p id="preloader-percentage">0 %</p>
+            </div>
+            <div class="preloader-explanations--container">
+                <p id="preloader-explanation">loading</p>
+            </div>
+        </div>
+        <div id="preloader-bar">
+            <div id="preloader-bar-inner"></div>
+        </div>
+    </div>
+    <div id="onboarding">
+        <div class="onboarding-cinematic">
+            <div class="onboarding-cinematic--topBar onboarding-cinematic-bar"></div>
+            <div class="onboarding-cinematic--bottomBar onboarding-cinematic-bar"></div>
+        </div>
+        <div class="onboarding-desc is-desktop">
+            <div class="steps step1">
+                <lottie-player class="lottie" src="https://assets6.lottiefiles.com/packages/lf20_pkig7lzg.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                <p split-by="word">Drag and drop your left mouse button to move the ufo.</p>
+            </div>
+            <div class="steps step2">
+                <lottie-player class="lottie" src="https://assets6.lottiefiles.com/packages/lf20_mnas6uzf.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                <p split-by="word">Drag and drop your right mouse button to rotate the camera.</p>
+            </div>
+            <div class="steps step3">
+                <lottie-player class="lottie" src="https://assets1.lottiefiles.com/packages/lf20_ojnk6hzm.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                <p split-by="word">Scroll to zoom.</p>
+            </div>
+        </div>
+        <div class="onboarding-desc is-mobile">
+            <div class="steps step1">
+                <lottie-player class="lottie" src="https://assets10.lottiefiles.com/packages/lf20_mtckmfhx.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                <p split-by="word">One finger to move the ufo.</p>
+            </div>
+            <div class="steps step2">
+                <lottie-player class="lottie" src="https://assets5.lottiefiles.com/packages/lf20_ivy6zky2.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                <p split-by="word">Two fingers to rotate the camera and zoom.</p>
+            </div>
+        </div>
+    </div>
+    <div id="explore">
+        <header>
+            <div id="star"> 
+            	<!-- <svg class="svg-polygon" width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path opacity="0.8" d="M21.9068 1H13.0932L5.40683 5.40683L1 13.0932V21.9068L5.40683 29.5932L13.0932 34H21.9068L29.5932 29.5932L34 21.9068V13.0932L29.5932 5.40683L21.9068 1Z" stroke="#959292" stroke-miterlimit="10" /> </svg> <svg class="svg-star" width="24" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 0L14.6 8.49667L23.2583 6.5L17.2 13L23.2583 19.5L14.6 17.5033L12 26L9.4 17.5033L0.74167 19.5L6.8 13L0.74167 6.5L9.4 8.49667L12 0Z" fill="#E4E4E4" /> </svg>  -->
+            </div>
+        </header>
+        <div id="about">
+            <div id="about-exit">
+                <div id="about-exit--close-btn" class="has-rollover-audio">
+                    <div class="bar"></div>
+                    <div class="bar"></div> <svg class="polygon" width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.8" d="M21.9068 1H13.0932L5.40683 5.40683L1 13.0932V21.9068L5.40683 29.5932L13.0932 34H21.9068L29.5932 29.5932L34 21.9068V13.0932L29.5932 5.40683L21.9068 1Z" stroke="#959292" stroke-miterlimit="10" /> </svg>
+                </div>
+            </div>
+            <div id="about-container">
+                <div id="about-container--border">
+                    <div id="about-star"> <svg width="24" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 0L14.6 8.49667L23.2583 6.5L17.2 13L23.2583 19.5L14.6 17.5033L12 26L9.4 17.5033L0.74167 19.5L6.8 13L0.74167 6.5L9.4 8.49667L12 0Z" fill="#E4E4E4" /> </svg> </div>
+                    <div id="about-content">
+                        <h1 split-by="word" letter-animation="fadeIn" class="about-title">Abduction</h1>
+                        <p split-by="word"> Abduction 🛸 is a Lusion Monthly Experiment crafted by <a href="https://twitter.com/edankwan" target="_blank">Edan Kwan</a> [exp design and crowd dev], <a href="https://twitter.com/brandonXYZW" target="_blank">Brandon Leigh-Bennett</a> [game concept and ufo dev] and <a href="https://twitter.com/PaulineStich" target="_blank">Pauline Stichelbaut</a> [ui design] at Lusion. We wanted to try building a complex GPGPU system for massive crowd simulation in WebGL. With the concept inspired by <a href="https://www.destroyallhumansgame.com/" target="_blank">Destroy All Humans!</a>, we created this barely playable mini game to allow users to control a UFO to throw human around (Yup, there is no abduction). </p>
+                        <p split-by="word">✶✶✶</p>
+                        <p split-by="word"> Lusion Monthly Experiment is an internal monthly challenge for the team at Lusion. 2 - 3 creatives will team up every month and come up with an idea for their experiment. The experiments are not expected to be a fully completed master piece as each team member can spend no longer than 2 hours per day on their experiment, which makes it more challenging and fun. </p>
+                        <p split-by="word">✶✶✶</p>
+                        <p split-by="word"> Follow us: <a href="https://twitter.com/lusionltd" target="_blank">tw</a> / <a href="https://www.facebook.com/lusionltd/" target="_blank">fb</a> / <a href="https://www.instagram.com/lusionltd/" target="_blank">ig</a> / <a href="https://medium.com/lusion-ltd" target="_blank">md</a> / <a href="https://www.linkedin.com/company/lusionltd" target="_blank">in</a> </p>
+                    </div> <a class="btn explore-btn has-rollover-audio" href="https://lusion.co/" target="_blank"> <svg class="explore-btn--arrow" width="32" height="6" viewBox="0 0 32 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 3H30.5M30.5 3C29.537 2.75 27.6111 1.8 27.6111 0M30.5 3C29.537 3.25 27.6111 4.2 27.6111 6" stroke="white" stroke-width="0.5" /> </svg> <span class="explore-btn--text" split-by="letter">Explore our work</span> </a>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div id="audio-btn" class="control__content has-rollover-audio">
+                <div class="audio__bar"></div>
+                <div class="audio__bar"></div>
+                <div class="audio__bar"></div>
+                <div class="audio__bar"></div>
+            </div>
+        </footer>
+    </div>
+    <script src="./assets/js/dat.gui.min.js"></script>
+    <script src="./assets/js/stats.min.js"></script>
+    <script src="./assets/js/index.js"></script>
+</body>
+
+</html>
