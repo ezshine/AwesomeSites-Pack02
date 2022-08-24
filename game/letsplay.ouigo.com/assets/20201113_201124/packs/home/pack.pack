@@ -1,0 +1,19 @@
+<section id="home">
+	<div class="wrapper__home">
+		<div class="home__logo">{{ svgs.logo_pinball |raw }}</div>
+		<p class="home__description">{{ l10n.home.content |raw }}</p>
+		<button class="home__button home__button--hide home__button--animated">
+			<span class="center">
+				<i>{{ l10n.home.button |raw }}</i>
+			</span>
+			<span class="flipper flipper-left">{{ svgs.flippers_left |raw }}</span>
+			<span class="flipper flipper-right">{{ svgs.flippers_right |raw }}</span>
+		</button>
+	</div>
+
+	<div class="home__cookies">
+		<p>{{ l10n.common.cookies |raw }}</p>
+	</div>
+
+	{% include '@partials/global/modules.twig' with { 'module' : module } %}
+</section>

@@ -1,0 +1,19 @@
+<header id="header" class="header">
+	<div class="overlay header__menu__overlay"></div>
+	{# <div class="header__logo">{{ svgs.logo_pinball |raw }}</div> #}
+	<div class="header__logo__ouigo">{{ svgs.logo_ouigo |raw }}</div>
+	<div class="header__toggle__menu">
+		<div class="open">{{ svgs.menu_burger |raw }}</div>
+		<div class="close">{{ svgs.menu_close |raw }}</div>
+	</div>
+	<div class="header__menu">
+		<ul class="header__menu__links">
+			<li class="header__menu__link link__rules"><a href="{{assetsBaseURL}}{{assetsPath}}pdf/reglement.pdf" target="_blank">{{ l10n.footer.rules |raw }}</a></li>
+			<li class="header__menu__link link__credits"><a href="" rel="internal">{{ l10n.footer.credits |raw }}</a></li>
+		</ul>
+		<ul class="header__menu__share">
+			<li class="header__menu__share__item header__menu__share__item--fb">{{ svgs.menu_button_fb |raw }}</li>
+			<li class="header__menu__share__item header__menu__share__item--tw">{{ svgs.menu_button_tw |raw }}</li>
+		</ul>
+	</div>
+</header>

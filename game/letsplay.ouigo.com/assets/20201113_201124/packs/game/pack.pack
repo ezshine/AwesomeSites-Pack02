@@ -1,0 +1,59 @@
+<section id="game" class="game--show">
+	<div class="game__menu">
+		<div class="game__menu__pause">{{ svgs.ui_pause |raw }}</div>
+		<div class="overlay"></div>
+		<div class="wrapper__menu">
+			<div class="game__menu__logo">{{ svgs.logo_pinball |raw }}</div>
+			<div class="game__menu__buttons">
+				<button class="game__menu__button button__continue">
+					<span class="center">
+						<i>{{ l10n.game.menu.buttons.continue |raw }}</i>
+					</span>
+				</button><!--
+				--><button class="game__menu__button button__restart">
+					<span class="center">
+						<i>{{ l10n.game.menu.buttons.restart |raw }}</i>
+					</span>
+				</button>
+			</div>
+			<span class="separation"></span>
+			<div class="game__menu__toggle">
+				<div class="game__menu__toggle__item toggle__sound sound--active">
+					<span class="label">{{ l10n.game.menu.sound.label |raw }}</span>
+					<a href="" class="sound__on" rel="internal">{{ l10n.game.menu.sound.textA |raw }}</a>
+					<i>-</i>
+					<a href="" class="sound__off" rel="internal">{{ l10n.game.menu.sound.textB |raw }}</a>
+				</div>
+				<div class="game__menu__toggle__item toggle__display displayhd--active">
+					<span class="label">{{ l10n.game.menu.display.label |raw }}</span>
+					<a href="" class="display__ultra" rel="internal">{{ l10n.game.menu.display.textA |raw }}</a>
+					<i class="sep__ultra">-</i>
+					<a href="" class="display__hd" rel="internal">{{ l10n.game.menu.display.textB |raw }}</a>
+					<i>-</i>
+					<a href="" class="display__sd" rel="internal">{{ l10n.game.menu.display.textC |raw }}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="wrapper__walkthrough wrapper__walkthrough--hide">
+		<!-- <div class="game__animatedKeyboard"></div> -->
+		<!-- <p class="game__description">{{ l10n.game.content |raw }}</p> -->
+		<span class="button-info">{{ svgs.button_info |raw }}</span>
+		<div class="wrapper__speech-bubble">
+			<div class="walkthrough__spacebar">
+				<div class="game__animatedSpacebar"></div>
+				<p class="game__description description__spacebar">{{ l10n.game.walkthroughSpacebar |raw }}</p>
+			</div>
+			<div class="walkthrough__arrow">
+				<div class="game__animatedArrow"></div>
+				<p class="game__description description__arrow">{{ l10n.game.walkthroughArrow |raw }}</p>
+			</div>
+			<div class="walkthrough__mobile">
+				<div class="game__animatedPhone"></div>
+				<p class="game__description description__mobile">{{ l10n.game.walkthroughPhone |raw }}</p>
+			</div>
+		</div>
+	</div>
+	{% include '@partials/global/modules.twig' with { 'module' : module } %}
+</section>

@@ -1,0 +1,17 @@
+<footer id="footer" class="footer">
+	<div class="footer__logo">{{ svgs.logo_ouigo |raw }}</div>
+	<div class="footer__navigation">
+		<button class="footer__navigation__item footer__navigation__leaderboard"><span>{{ l10n.footer.navigation.leaderboard |raw }}</span></button>
+		<!--<button class="footer__navigation__item footer__navigation__contest"><span>{{ l10n.footer.navigation.contest |raw }}</span></button>-->
+	</div>
+	<div class="footer__links">
+		<ul class="footer__shares">
+			<li class="footer__shares__item footer__shares__facebook">{{ svgs.button_fb3 |raw }}</li>
+			<li class="footer__shares__item footer__shares__twitter">{{ svgs.button_tw3 |raw }}</li>
+		</ul>
+		<ul class="footer__secondary__links">
+			<li class="footer__link link__rules"><a href="{{assetsBaseURL}}{{assetsPath}}pdf/reglement.pdf" target="_blank">{{ l10n.footer.rules |raw }}</a></li>
+			<li class="footer__link link__credits"><a href="" rel="internal">{{ l10n.footer.credits |raw }}</a></li>
+		</ul>
+	</div>
+</footer>
