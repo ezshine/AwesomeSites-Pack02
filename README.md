@@ -6,3 +6,5 @@
 - letsplay.ouigo.com
 - neal.fun/design-the-next-iphone
 - lr.doesbook.kr
+- truesource.evian.com
+- ellometay33art

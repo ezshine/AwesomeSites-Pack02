@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Ello.Ello.</title>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta name="viewport" content="width=640,init-scale=1.0, max-scale=1.0, min-scale=1.0, user-scalable=no,target-densitydpi=device-dpi">
+<link href="css/main.css" rel="stylesheet" type="text/css">
+ <!-- <script src="js/vconsole.min.js"></script>
+<script>
+var vConsole = new window.VConsole();
+</script>  -->
+<script>
+    var appid='74DDEB9954814DA2BBA39D2853DC807D';var vn='ellometa_v1.0.0';var vc='';var TDBaseUrl='https://jic.talkingdata.com/app/h5/v1/websdk';var TDRequestUrl='https://h5.udrig.com/app/v1';function createScriptTd(url){var _head=document.getElementsByTagName('head')[0];var _script=document.createElement('script');_script.type='text/javascript';_script.src=url;_head.appendChild(_script)};createScriptTd(TDBaseUrl+'/js/sdk_release.js');if(!window['JSON']||typeof JSON!=='object'){createScriptTd(TDBaseUrl+'/js/json2.js')};window["TDAPP"] = {}; window["TDAPP"].onEvent = function(id,label,params){if(arguments.length>0){try{var opts={count:1,start:new Date().getTime()};if(id!=undefined){opts["id"]=typeof id!="string"?JSON.stringify(id):id}if(label!=undefined){opts["label"]=typeof label!="string"?JSON.stringify(label):label}else{opts["label"]=""}if(params!=undefined){var isJson=function(obj){var isjson=typeof(obj)=="object"&&Object.prototype.toString.call(obj).toLowerCase()=="[object object]"&&!obj.length;return isjson};if(isJson(params)){opts["params"]=params}else{opts["params"]={params:""}}}var eventName="__TD_td-init-event";var ev=localStorage[eventName];if(ev){var ca=JSON.parse(ev);ca.push(opts);localStorage.setItem(eventName,JSON.stringify(ca));return};localStorage.setItem(eventName,"["+JSON.stringify(opts)+"]")}catch(e){}}};
+</script>
+</head>
+<body >
+<div class="Maincontainer common" style="overflow: hidden;position: fixed">
+    <audio width="0" height="0" id="loopMusic" src="bgm.mp3" loop autoplay></audio>
+
+    <div id="main" class="common"   style="display:none;overflow:hidden; z-index:1;  background:#000000">
+    </div>
+    <div id="loadd" class="common oo"  style="display:block;overflow:hidden; background:#ffffff">
+        <img class='common' src="images/ldbg.jpg">
+        <img class='common ldth2' src="images/ldth1.png">
+        <img class='common ldth1' src="images/ldth2.png">
+        <div  class='common'></div>
+
+
+        <div id='ldbar2' style="height: 0px;"></div>
+    </div>
+    
+    <img id="sugg" style="display:none;z-index: 1111;" src="images/sugg.jpg">
+
+
+</div>
+<script type="text/javascript" src='js/jquery-3.1.0.min.js'></script>
+<script type="text/javascript" src='js/jquery.queryloader2.min.js'></script>
+<script type="text/javascript" src='js/gsap.min.js'></script>
+<script type="text/javascript" src="js/three.min.js"></script>
+
+<script type="text/javascript" src='js/main.js'></script>
+
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.1.0.js"></script>
+<script type="text/javascript" src='share.js'></script>
+
+<script type="text/javascript" src='js/threePack.min.js'></script> 
+
+
+</body>
+</html>
