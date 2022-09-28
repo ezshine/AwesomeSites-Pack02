@@ -11,3 +11,4 @@
 - truesource.evian.com
 - ellometay33art
 - www.thepleasurepursuit.com
+- vrshow-oss.dt-space.cn
