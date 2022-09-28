@@ -1,5 +1,7 @@
 # AwesomeSites-Pack02
 
+> collected in [AwesomeSites](https://github.com/ezshine/AwesomeSites)
+
 
 - exp-abduction.lusion.co
 - media-facade.shiftlink.tech
