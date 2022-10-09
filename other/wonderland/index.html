@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WMU</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,user-scalable=no">
+    <meta itemprop="name" content="WMU Parallel Universe"/>
+ <meta itemprop="image" content="https://h5.blankpage.site/h5/wonderland/mag202207/public/images/share.jpg"/>
+ <meta property="og:image" content="https://h5.blankpage.site/h5/wonderland/mag202207/public/images/share.jpg"/>
+ <meta name="description" itemprop="description" content="点击探索新时空秩序"/>
+ 
+    <link rel="stylesheet" href="public/css/aliplayer-min.css?name=001" />
+    <link rel="stylesheet" href="public/css/main.css?name=001" />
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+</head>
+<body>
+<div class="warp" id="warp">
+  <div id="annieEngine" style="line-height:0;font-size:0"></div>
+  <div class="videomcBox" id="videomcBox">
+      <div class="closebtn"><img src="public/images/jump.png"></div>
+      <div class="jumpbtn" id="jumpbtn"><img src="public/images/jump1.png"></div>
+      <div class="prism-player exitfullscreen-player" id="player-mc-con"></div>
+  </div>
+  <div class="videoSmallBox" id="videoSmallBox">    
+      <div class="prism-player exitfullscreen-player" id="player-small-con"></div>
+  </div>
+  <div class="pause pause_playing" id="pause"><img src="public/images/on.png"></div>
+  <div id="loading" class="loading"></div>
+  <div class="device-box" id="device-box">
+      <div class="cont">
+          <div class="contImg" id="contImg"></div>
+          <!-- <img src="public/images/code.png"> -->
+          <p>为了更好的体验，请使用手机扫描二维码浏览</p>
+      </div>
+  </div>
+  <div class="hpts" id="hpts">
+      <img src="public/images/hpts.png">
+  </div>
+  <!--
+pages/ec/index/index?type=0&channel=34&platform=wechat
+
+【鞋子详情页路径】
+
+黑色↓
+pages/ec/goods/detail?id=166&channel=35&platform=wechat
+
+白色↓
+pages/ec/goods/detail?id=327&channel=36&platform=wechat
+
+Monogram↓
+pages/ec/goods/detail?id=328&channel=37&platform=wechat
+  -->
+<div class="details" id="details">
+  <wx-open-launch-weapp class="launch" id="launch-btn1" username="gh_ee835c158304" path="pages/ec/goods/detail?id=166&channel=35&platform=wechat">
+      <template>
+        <style>.btn { padding: 12px;opacity:1;display: block;width:224px;height:80px;background:#ccc;}</style>
+        <button class="btn">打开小程序</button>
+      </template>
+  </wx-open-launch-weapp>
+</div>
+
+<img src="" id="savePic">
+</div>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="./public/js/jquery-3.1.0.min.js"></script>
+
+<script type="text/javascript" src="./public/dist/core.js"></script>
+<script type="text/javascript" src="./public/dist/enc-utf8.js"></script>
+<script type="text/javascript" src="./public/dist/enc-base64.js"></script>
+<script type="text/javascript" src="./public/dist/cipher-core.js"></script>
+<script type="text/javascript" src="./public/dist/tripledes.js"></script>
+<script type="text/javascript" src="./public/dist/3des.js"></script>
+
+<script type="text/javascript" src="./public/js/qrcode.min.js"></script>
+<script charset="utf-8" src="./public/js/aliplayer-min.js"></script>
+<script src="public/js/main.js?name=2022081000"></script>
+<!-- <script src="./public/js/spin.min.js" ></script>
+<script src="./public/js/loading.js" ></script> -->
+<script>    
+    (function() {
+      var hidden = "hidden";
+      // Standards:
+      if (hidden in document)
+        document.addEventListener("visibilitychange", onchange);
+      else if ((hidden = "mozHidden") in document)
+        document.addEventListener("mozvisibilitychange", onchange);
+      else if ((hidden = "webkitHidden") in document)
+        document.addEventListener("webkitvisibilitychange", onchange);
+      else if ((hidden = "msHidden") in document)
+        document.addEventListener("msvisibilitychange", onchange);
+      // IE 9 and lower:
+      else if ("onfocusin" in document)
+        document.onfocusin = document.onfocusout = onchange;
+      // All others:
+      else
+        window.onpageshow = window.onpagehide
+        = window.onfocus = window.onblur = onchange;
+
+      function onchange (evt) {
+        var v = "visible", h = "hidden",
+            evtMap = {
+              focus:v, focusin:v, pageshow:v, blur:h, focusout:h, pagehide:h
+            };
+
+        evt = evt || window.event;
+        if (evt.type in evtMap)
+          document.body.className = evtMap[evt.type];
+        else
+          document.body.className = this[hidden] ? "hidden" : "visible";
+        if(document.body.className=="hidden"){
+            if(firstshow && autoplay){                
+                app.sound.pause(true);
+                app.sound.volume=0;
+            }
+            if(document.querySelector("video")&&app.videoisplay){                
+                player.pause()
+            }
+
+        }else if(document.body.className=="visible"){            
+            if(firstshow && autoplay){
+               // fnautoplay();
+               app.sound.pause(false);
+               app.sound.volume=1;
+            }
+            if(document.querySelector("video") && app.videoisplay){
+              /*console.log(document.querySelector("#jumpbtn").style.display);
+                if(el("#jumpbtn").style.display=="block"){
+
+                }else{}*/
+                  player.play();
+                
+                // player.play();
+               // }
+            }
+        }
+          
+      }
+      if( document[hidden] !== undefined )
+        onchange({type: document[hidden] ? "blur" : "focus"});
+    })();
+</script>
+<script src="libs/annieCore.min.js"></script>
+    <!--如果有用到annieUI组件类,则需要开启下面的js-->
+    <script src="libs/annieUI.min.js"></script>
+    <script>
+        window.swfBytes={"emBox":335,"loading":298833,"page1":2881795,"page10_1":33686007,"page11":2977261,"page13":1344206,"page19":12504,"page20":142704,"page3":1645,"page4":8810,"page8":849137,"page8_1":387099};
+    </script>
+    <script src="src/f2xMain.min.js?v=1660086869641"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?667c4de9c0e157d544d358501519a076";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</body>
+</html>

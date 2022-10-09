@@ -1,0 +1,1 @@
+"use strict";AnnieRoot.emBox=AnnieRoot.emBox||{},AnnieRoot.emBox.EmBox=function(){annie.Sprite.call(this),annie.initRes(this,"emBox","EmBox")},annie.A2xExtend(AnnieRoot.emBox.EmBox,annie.Sprite);{"head":["emBox",30,1206,750,"#ffffff"],"EmBox":{"t":1,"tf":0}}[{"type":"javascript","src":195},{"id":"_a2x_con","type":"json","src":63}]742

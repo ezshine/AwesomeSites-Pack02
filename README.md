@@ -12,3 +12,7 @@
 - ellometay33art
 - www.thepleasurepursuit.com
 - vrshow-oss.dt-space.cn
+- bmwspace
+- webgi-jewelry.vercel
+- wonderland
+- vrseat.vercel

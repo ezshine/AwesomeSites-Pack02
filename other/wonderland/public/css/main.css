@@ -1,0 +1,485 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    border: 0px;
+    overflow: hidden;
+    position: absolute;
+    background-color: #000;
+    user-select: none;
+   -webkit-user-select: none;
+   -webkit-tap-highlight-color: transparent; 
+}
+body{
+    background:url(../images/back.jpg) left center no-repeat;
+    background-size:100% auto;
+}
+canvas{
+    user-select: none;
+   -webkit-user-select: none;
+   -webkit-tap-highlight-color: transparent; 
+}
+#myAnnie{
+    position: absolute;
+    left:0;
+    top:0;
+    z-index: 100;
+    pointer-events: none;
+}
+.pause {
+    width: 7.3%;
+    position: absolute;
+    right:12px;
+    bottom: 15px;
+    z-index: 1000;
+    display: none;
+}
+.pauseLeft {
+    opacity:0.35;
+}
+.pause img {
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
+}
+/* .pause img:nth-child(1){
+    display: none;
+}
+.pause img:nth-child(2){
+    display: block;
+}
+.pause_playing img:nth-child(1){
+    display: block;
+}
+.pause_playing img:nth-child(2){
+    display: none;
+} */
+.pause_playing img {
+    -webkit-animation: ring 2s infinite linear forwards;
+    animation: ring 2s infinite linear forwards;
+    /*-webkit-animation-play-state: paused;
+    animation-play-state: paused;*/
+    /* background-image:url(images/off.png)*/
+}
+
+@-webkit-keyframes ring {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+    
+}
+
+@keyframes ring {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.prism-player {      
+    width: 100%;
+    height: 400px;         
+    background: none;
+}
+/*#videoBox{
+    position: absolute;
+    top:0;
+    left:-500%;
+    background-color:#000;
+    width: 100%;
+    height:100%;
+    z-index: 2000; 
+    display: flex;
+    align-items: center;
+}*/
+.videoBox{
+            position: absolute;
+            top:0;
+            left:-500%;
+            background-color:#000;
+            width: 100%;
+            height:100%;
+            z-index: 2000; 
+        }
+#videoBtn{
+            width:100px;
+            height:100px;            
+            display:none;
+            padding:200px;
+            margin:-100px;
+            background:rgba(255,255,255,0);
+        }
+        .videoSide{
+            position: absolute;
+            left:-500%;
+            top:0;
+            width:100%;
+            height:100%;
+            background-color:#000;
+        }
+ .progressBox{
+            width: 100%;
+            height:100%;
+            position: absolute;
+            left:0;
+            top:0;
+            z-index:2000;
+            transition: opacity 0.5s;
+            -webkit-transition: opacity 0.5s;
+        }
+        .awakenVideo{
+            width: 100%;
+            height:100%;
+            position: absolute;
+            left:0;
+            top:0;
+            z-index:2000;
+            display: none;
+        }
+        .gressLine{
+            width: 41px;
+            height:90%;
+            position: absolute;
+            left:20px;
+            top:5%;
+        }
+        .gressLine .baseLine{
+            position: absolute;
+            right:18px;
+            top:0;
+            width:3px;
+            height:100%;
+            border-radius: 2px;
+            background: rgba(195,197,198,.2);
+        }
+        
+        .gressLine .loaded,.gressLine .begining{
+            position: absolute;
+            right:18px;
+            top:0;
+            width:3px;
+            border-radius: 2px;
+            height:0;
+            background:#fff;
+        }
+        .gressLine .loaded{
+            background:#00c1de;
+        }
+        .gressLine .dragBox{
+            width:30px;
+            height:30px;
+            background:url(../images/drag.png) left top no-repeat;
+            background-size:100% 100%;
+            position: absolute;
+            right:5px;
+            top:0;                      
+            box-sizing: content-box;
+            margin-top:-6px;
+            margin-left:0; 
+            
+        }
+        .gressLine .begining{
+            pointer-events: none;
+        }
+        .gressBtn{
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            -webkit-transform: translate(-50%,-50%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: url(../images/video.png) center top no-repeat rgba(195,197,198,.2);
+            background-size: 60px 120px;            
+        }
+        .gressBtn.gressPause{
+            background-position: center bottom;
+           /* background-image:url(../images/rotate_play.png);*/
+        }
+
+        .vertical .gressLine{
+            height: 41px;
+            width:90%;            
+            left:5%;
+            top:auto;
+            bottom:60px;
+        }
+        .vertical .gressLine .baseLine{            
+            top:18px;            
+            right:auto;
+            left:0;
+            height:3px;
+            width:100%;
+        }
+
+        .vertical .gressLine .loaded,.vertical .gressLine .begining{            
+            top:18px; 
+            left:0;           
+            right:auto;
+            height:5px;
+            width:0;
+        }
+        .vertical .gressLine .dragBox{            
+            top:5px;
+            left:0;
+            margin-top:0;
+            margin-left:-6px;         
+        }
+
+
+        .vertical .gressBtn {
+            background:url("../images/video_vertical.png") left top no-repeat rgba(195,197,198,.2);
+            background-size: 120px 60px;
+        }
+        .vertical .gressBtn.gressPause{
+            background-position: right top;
+           /* background-image:url(../images/rotate_play.png);*/
+        }
+
+
+
+        img{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; /* Disable selection/copy in UIWebView */
+}
+
+.hide{
+    display: none;
+}
+.close{
+    position:absolute;
+    left:43.47%;
+    bottom:10px;
+    /*right:20px;
+    top:20px;*/
+    width:13.06%;
+    z-index:9999;
+}
+.close img {
+    width:100%;
+}
+#jump{
+    position:absolute;
+    left:41.2%;
+    bottom:35px;
+    width:17.6%;
+    z-index:9999;
+}
+
+.savePic {
+    display: none;
+    position: absolute;
+    left:0;
+    top:0;
+    z-index:100;
+    pointer-events: none;
+    opacity: 0;
+}
+.imgs{
+    opacity:0;
+    left:0;
+    top:0;
+    z-index:2;
+    width:750px;
+    height:1454px;
+    overflow:hidden;
+    display: none;
+}
+.warp{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+    /* background: #fff; */
+    position: absolute;
+    left:0;
+    bottom:0;
+}
+img,video{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; /* Disable selection/copy in UIWebView */
+}
+
+@keyframes spinner-line-fade-more {
+  0%, 100% {
+    opacity: 0; /* minimum opacity */
+  }
+  1% {
+    opacity: 1;
+  }
+}
+
+@keyframes spinner-line-fade-quick {
+  0%, 39%, 100% {
+    opacity: 0.25; /* minimum opacity */
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+@keyframes spinner-line-fade-default {
+  0%, 100% {
+    opacity: 0.22; /* minimum opacity */
+  }
+  1% {
+    opacity: 1;
+  }
+}
+
+@keyframes spinner-line-shrink {
+  0%, 25%, 100% {
+    /* minimum scale and opacity */
+    transform: scale(0.5);
+    opacity: 0.25;
+  }
+  26% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.loading{
+    /*26px
+    bottom:50%;
+    left:50%;*/
+    position: absolute;
+    left:0;
+    top:0;
+    background:url(../images/backload.jpg) left center no-repeat;
+    background-size: 100% auto;
+    width:100%;
+    height:100%;
+    z-index:100;
+    pointer-events: none;
+    display: none;
+
+}
+.loading{
+    width:;
+}
+.hpts{
+    background:#fff;
+    width:100%;
+    height:100%;
+    position: fixed;
+    left:0;
+    top:0;
+    z-index: 100000;
+    display: flex;
+    display: -webkit-flex; /* Safari */
+    justify-content:center;
+    align-items: center;
+}
+.hpts img{
+    width:13.6%;
+}
+/*//CSS处理
+//竖屏时样式*/
+@media all and (orientation:portrait){
+    .hpts{
+        display: none;
+    }
+}
+/*//横屏时样式*/
+@media all and (orientation:landscape){
+    /*.hpts{
+        display: block;
+    }*/
+}
+.myName{
+    width:547px;
+    height:70px;
+    display: none;
+    border:none;
+    background:none;
+    z-index:1000;
+    font-size:30px;
+}
+.device-box {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999999;
+  color: #fff;
+  background-color: #000;
+}
+
+.device-box .cont {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 400px;
+  height: 320px;
+  margin-top: -160px;
+  margin-left: -200px;
+  text-align: center;
+}
+
+.device-box .cont img {
+  margin: 0 auto;
+  width: 260px;
+  height: 260px;
+  border: 5px solid #fff;
+}
+
+.videoSmallBox{
+    width:304px;
+    height:453px;
+    background:#000;
+    display: none;
+}
+.videomcBox{
+    width:100px;
+    height:100px;
+    background:#000;
+    display: none;
+}
+.videomcBox .closebtn{
+    width:128px;
+    height:56px;
+    z-index:1000;
+    position: absolute;
+    right:30px;
+    top:24px;
+}
+.videomcBox .closebtn img{
+    width:100%;
+}
+
+.videomcBox .jumpbtn{
+    width:100%;
+    height:100%;
+    z-index:1000;
+    position: absolute;
+    right:0;
+    top:0;
+    background:rgba(0,0,0,0);
+    display: none;
+}
+.videomcBox .jumpbtn img{
+    width:198px;
+    height:58px;
+    position: absolute;
+    right:340px;
+    bottom:200px;
+}
+
+.details{
+    width:224px;
+    height:90px;
+    background:#ccc;
+    display: none;
+}
+.launch{
+    width:224px;
+    height:90px;
+}
+#savePic{
+    width:750px;
+    height:1500px;
+    opacity: 0;
+    display:none;
+}
