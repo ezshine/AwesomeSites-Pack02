@@ -16,3 +16,4 @@
 - webgi-jewelry.vercel
 - wonderland
 - vrseat.vercel
+- adobexbowie75.com
