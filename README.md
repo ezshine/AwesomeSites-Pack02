@@ -20,3 +20,4 @@
 - playyourpower.narscosmetics.com
 - slowroads.io
 - www.thefemalegaze.art
+- giga.game
